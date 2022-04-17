@@ -4,13 +4,27 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        StackLIFO stack_1 = new StackLIFO();
-        while (true) {
-            System.out.println("Type number for stack element");
-            int choice = scanner.nextInt();
-            if(choice < 0) break;
-            stack_1.addItem(choice);
-            System.out.println(stack_1.toString());
+        // Очередь
+        System.out.println("Очередь");
+        var queue = new Queue<Character>();
+        for (var i = 'a'; i < 'd'; i++) {
+            System.out.print(i + " ");
+            queue.Push(i);
+        }
+        System.out.println();
+        for (var i = 'a'; i < 'd'; i++) {
+            System.out.println(queue.Pop());
+        }
+        // Стек
+        System.out.println("Стек");
+        var stack = new Stack<Character>();
+        for (var i = 'a'; i < 'd'; i++) {
+            System.out.print(i + " ");
+            stack.Push(i);
+        }
+        System.out.println();
+        for (var i = 'a'; i < 'd'; i++) {
+            stack.Pop();
         }
     }
 }
