@@ -28,16 +28,17 @@ public class Stack<T> {
         head = new Item(data, head);
     }
 
-    public void Pop() {
+    public T Pop() {
         count--;
-        System.out.println(head.data);
+        var buff = head.data;
         head = head.next;
+        return (T) buff;
     }
 
     @Override
     public String toString() {
         StringBuffer sb = new StringBuffer();
-        Item buff = head;
+        var buff = head;
         while (buff != null) {
             sb.append(buff.data + "| ");
             buff = buff.next;

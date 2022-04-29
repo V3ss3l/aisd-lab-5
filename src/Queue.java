@@ -28,7 +28,7 @@ public class Queue<T> {
     }
 
     public void Push(T data) {
-        var item = new Item<T>(data);
+        var item = new Item<>(data);
         var tempItem = tail;
         tail = item;
 
@@ -47,6 +47,10 @@ public class Queue<T> {
         head = head.getNext();
         count--;
         return (T) output;
+    }
+
+    public boolean IsEmpty(){
+        return Count() == 0;
     }
 
     @Override

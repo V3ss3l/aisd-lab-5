@@ -3,28 +3,30 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        // Очередь
-        System.out.println("Очередь");
-        var queue = new Queue<Character>();
-        for (var i = 'a'; i < 'd'; i++) {
+        var scanner = new Scanner(System.in);
+        var count = scanner.nextInt();
+
+        var queue = new Queue<Integer>();
+        var stack = new Stack<Integer>();
+        while (count > 0){
+            queue.Push(count);
+            stack.Push(count);
+            var sc = new Scanner(System.in);
+            count = sc.nextInt();
+        }
+        /*for (var i = 0; i < count; i++) {
             System.out.print(i + " ");
             queue.Push(i);
-        }
-        System.out.println();
-        for (var i = 'a'; i < 'd'; i++) {
-            System.out.println(queue.Pop());
-        }
-        // Стек
-        System.out.println("Стек");
-        var stack = new Stack<Character>();
-        for (var i = 'a'; i < 'd'; i++) {
-            System.out.print(i + " ");
             stack.Push(i);
+        }*/
+        var c = queue.Count();
+        long start = System.currentTimeMillis();
+        System.out.println("\nQueue\t\tStack");
+        while (!queue.IsEmpty()) {
+            System.out.println(queue.Pop() + "\t\t\t" + stack.Pop());
         }
-        System.out.println();
-        for (var i = 'a'; i < 'd'; i++) {
-            stack.Pop();
-        }
+        long finish = System.currentTimeMillis();
+        long elapsed = finish - start;
+        System.out.println("Количество элементов: " + c + "\nПрошло времени, мс: " + elapsed);
     }
 }
